@@ -98,8 +98,8 @@ To run the project, you need .NET SDK 6.0 or later.
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/MyApiProject.git
-    cd MyApiProject
+    git clone https://github.com/MichaelSel/HelloCSharp.git
+    cd HelloCSharp
     ```
 
 2. **Install dependencies and restore packages**:
