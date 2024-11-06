@@ -44,13 +44,13 @@ public class AnotherController : ControllerBase
         return Ok("Get from another route!");
     }
     
-    [HttpPost("first")] // This is a route template that appends to the route specified in the class attribute (so "another-route/first")
+    [HttpPost("first")] 
     public IActionResult Post()
     {
         return Ok("Post from another route!");
     }
     
-    [HttpPut("second")] // This is a route template that appends to the route specified in the class attribute (so "another-route/second")
+    [HttpPut("second")]
     public IActionResult Put()
     {
         return Ok("Put from yet another route!");
