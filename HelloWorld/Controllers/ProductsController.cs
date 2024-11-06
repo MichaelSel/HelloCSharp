@@ -1,3 +1,4 @@
+using HelloWorld.Attributes;
 using HelloWorld.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using HelloWorld.Routes;
@@ -6,8 +7,10 @@ namespace HelloWorld.Controllers;
 
 [Route(ApiRoutes.Products.GetAll)] // Attribute indication -> This tells the framework that this controller should be called when a request is made to the specified route
 [ApiController] // Attribute indication -> This tells the framework that this controller should be treated as a controller for API requests
+[Version("1.2", "Michael", 2024)]  // Applying custom VersionAttribute to enhance the class with metadata
 public class ProductsController(IProductService productService) : ControllerBase
 {
+    [Version("1.1", "Eugene")]  
     [HttpGet] // Attribute indication -> This tells the framework that this method should be called when an HTTP GET request is made to the specified route
     public IActionResult GetAllProducts()
     {
