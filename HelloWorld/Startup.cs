@@ -25,11 +25,22 @@ public class Startup(IConfiguration configuration)
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         // Register application services
-        services.AddTransient<IProductService, ProductService>();
+        services.AddTransient<IProductService, ProductService>(); // Register ProductService as a transient service
+        // A transient service is created anew EACH time it's requested
 
+        
         // Register custom middleware if needed
         services.AddScoped<CustomMiddleware>();
+        // A scoped service is created once per HTTP request but shared across all components that require it within the same HTTP request
 
+        
+        //*******//
+        // services.AddSingleton<CustomMiddleware>();
+        // A singleton service is created ONCE in the lifetime of the app, and shared across all components that require it
+        // This is not recommended for middleware because middleware should be stateless
+        // But this when we want to share a single instance's state across the app
+        
+        
         // Add support for controllers
         services.AddControllers();
 
